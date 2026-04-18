@@ -15,5 +15,46 @@
         <li>Infraestructura en la nube</li>
     </ul>
 
+    <h2>Calcular próximo periodo</h2>
+
+<label>Último periodo:</label>
+<input type="date" id="fecha">
+
+<button onclick="calcular()">Calcular</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcular() {
+    let fecha = new Date(document.getElementById("fecha").value);
+    fecha.setDate(fecha.getDate() + 28);
+
+    document.getElementById("resultado").innerText =
+        "Tu próximo periodo sería: " + fecha.toDateString();
+}
+</script>
+
+    <h2>Login</h2>
+
+<input type="text" placeholder="Usuario" id="user">
+<input type="password" placeholder="Contraseña" id="pass">
+
+<button onclick="login()">Entrar</button>
+
+<p id="mensaje"></p>
+
+<script>
+function login() {
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234") {
+        document.getElementById("mensaje").innerText = "Acceso correcto";
+    } else {
+        document.getElementById("mensaje").innerText = "Error";
+    }
+}
+</script>
+
 </body>
 </html>
